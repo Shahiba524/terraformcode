@@ -2,13 +2,6 @@ data "http" "myip"{
     url="http://ipv4.icanhazip.com"
     }
 
-data "aws_vpc" "vpc"{
-    filter {
-    name="tag:name"
-   values = [ "vpc" ]
-    }
-}
-
 resource "aws_security_group" "bastion" {
     name="allow_ssh"
     description = "allow ssh inbound traffic"
